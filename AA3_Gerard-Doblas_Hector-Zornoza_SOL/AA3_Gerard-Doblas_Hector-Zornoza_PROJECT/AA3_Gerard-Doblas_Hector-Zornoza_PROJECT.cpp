@@ -1,19 +1,78 @@
-// AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+#include <cstdlib>
+#include <cstdio>
+#include "Map.h"
+#include "Character.h"
+#include "Enemy.h"
+#include <Windows.h> //Preguntar si se puede usar
 
-#include <iostream>
-
-int main()
+enum class MainManager
 {
-    std::cout << "Hello World!\n";
+	FIGHTING,
+
+	DUNGEON,
+
+	CHEST,
+
+	GAMEOVER
+};
+
+void gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
+void ShowFirstHUDDungeon(MainManager& currentScene)
+{
+	printf("------ DUNGEON ------\n");
+	printf("\n");
+	printf("E -> Enemy    P -> Player    C -> Chest\n");
+	printf("\n");
+	printf("Health: \n");
+	printf("Potions: \n");
+	printf("Moves:  \n");
+}
 
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
+void ShowLastHUDDungeon(MainManager& currentScene)
+{
+	printf("____________________\n");
+	printf("\n");
+	printf("W A S D -> Move\n");
+	printf("P -> Potion\n");
+	printf("\n");
+	printf("Enter your action: ");
+}
+
+void ShowHUDFighting(MainManager& currentScene)
+{
+	printf("------ DUNGEON ------\n");
+}
+
+void ShowHUDChest(MainManager& currentScene)
+{
+
+}
+
+void main()
+{
+	srand(time(NULL));
+
+	MainManager currentScene = MainManager::DUNGEON;
+
+	Map map;
+
+	bool gameIsOver = false;
+	bool MapWrite = false;
+	//while (!gameIsOver) {
+	switch (currentScene)
+	{
+	case MainManager::DUNGEON:
+		ShowFirstHUDDungeon(currentScene);
+		map.SetMap();
+		ShowLastHUDDungeon(currentScene);
+	}
+	//}
+
+}
