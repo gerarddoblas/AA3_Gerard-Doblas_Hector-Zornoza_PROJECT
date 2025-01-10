@@ -1,2 +1,4 @@
 ﻿  AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp
-  AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj -> C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe
+C:\Users\hecto\Desktop\MiniRPG\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(83,1): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+C:\Users\hecto\Desktop\MiniRPG\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(84,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj -> C:\Users\hecto\Desktop\MiniRPG\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe

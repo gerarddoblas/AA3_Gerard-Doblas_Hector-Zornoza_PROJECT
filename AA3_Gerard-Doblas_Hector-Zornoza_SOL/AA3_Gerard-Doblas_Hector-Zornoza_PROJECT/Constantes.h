@@ -12,6 +12,7 @@
 #define MIN_INIT_HP 90
 #define MAX_INIT_ST 110
 #define MIN_INIT_ST 90
+#define MAX_POTIONS 3
 
 // Enemy
 #define MAX_INIT_HP_EN 90

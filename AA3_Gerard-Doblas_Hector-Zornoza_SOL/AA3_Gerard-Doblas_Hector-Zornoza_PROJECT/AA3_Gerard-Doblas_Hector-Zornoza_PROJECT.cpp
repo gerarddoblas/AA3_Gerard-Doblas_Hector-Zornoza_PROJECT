@@ -45,12 +45,36 @@ void ShowLastHUDDungeon(MainManager& currentScene)
 	printf("Enter your action: ");
 }
 
-void ShowHUDFighting(MainManager& currentScene)
+void ShowHUDFighting(MainManager& currentScene, Character& c)
 {
-	printf("------ DUNGEON ------\n");
+	printf("------ COMBAT ------\n");
+	printf("\n");
+	printf("--ENEMY--\n");
+	printf("[=========] ? HP\n");
+	printf("[>>>>>>>>>] ? Stamina\n");
+	printf("\n");
+	printf("---------------------\n");
+	printf("\n");
+	printf("-- PLAYER --\n");
+	printf("[=========] %d / %d HP\n", c.hp, MAX_INIT_HP);
+	printf("[>>>>>>>>>] %d / %d Stamina\n", c.stam, MAX_INIT_ST);
+	printf("\n");
+	printf("Potions %d / %d\n", c.potions, MAX_POTIONS);
+	printf("\n");
+	printf("____________________________________\n");
+	printf("\n");
+	printf("A -> Attack\n");
+	printf("D -> Defend\n");
+	printf("R -> Rest\n");
+	printf("P -> Potion\n");
 }
 
 void ShowHUDChest(MainManager& currentScene)
+{
+
+}
+
+void CharacterMove() 
 {
 
 }
@@ -59,7 +83,11 @@ void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::DUNGEON;
+	MainManager currentScene = MainManager::FIGHTING;
+
+	Enemy e;
+
+	Character c;
 
 	Map map;
 
@@ -68,10 +96,17 @@ void main()
 	//while (!gameIsOver) {
 	switch (currentScene)
 	{
+	case MainManager::FIGHTING:
+		ShowHUDFighting(currentScene, c);
+		break;
 	case MainManager::DUNGEON:
 		ShowFirstHUDDungeon(currentScene);
 		map.SetMap();
 		ShowLastHUDDungeon(currentScene);
+		break;
+	case MainManager::CHEST:
+		ShowHUDChest(currentScene);
+		break;
 	}
 	//}
 
