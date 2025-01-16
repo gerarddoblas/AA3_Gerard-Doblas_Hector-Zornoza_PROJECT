@@ -6,6 +6,7 @@
 #define NUM_COLS 5
 #define ROWS_SIZES 3
 #define COLS_SIZE 3
+#define CHESTS 2
 
 // Character
 #define MAX_INIT_HP 110

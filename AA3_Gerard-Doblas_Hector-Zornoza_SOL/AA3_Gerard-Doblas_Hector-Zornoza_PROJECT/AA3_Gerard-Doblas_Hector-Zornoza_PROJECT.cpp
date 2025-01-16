@@ -74,17 +74,18 @@ void ShowHUDChest(MainManager& currentScene)
 
 }
 
+void ChestSpawn()
+{
+		
+}
 void CharacterMove() 
 {
 
 }
 
-char WaitForInput() {
-	while (true) {
-		if (_kbhit()) { // Espera hasta que se presione una tecla
-			return _getch(); // Devuelve la tecla presionada
-		}
-	}
+void Input()
+{
+	while (std::cin.get() != '\n');
 }
 
 void main()
@@ -109,18 +110,20 @@ void main()
 	{
 	case MainManager::FIGHTING:
 		ShowHUDFighting(currentScene, c);
+		Input();
 		break;
 	case MainManager::DUNGEON:
 
 		ShowFirstHUDDungeon(currentScene);
 		map.SetMap();
 		ShowLastHUDDungeon(currentScene);
+		Input();
 		break;
 	case MainManager::CHEST:
 		ShowHUDChest(currentScene);
+		Input();
 		break;
 	}
-	char input = WaitForInput();
 	}
 
 }
