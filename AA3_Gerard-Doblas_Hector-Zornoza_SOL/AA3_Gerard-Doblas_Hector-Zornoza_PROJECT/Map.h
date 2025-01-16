@@ -12,6 +12,8 @@ enum class Box {
 
     CHEST = 'C',
 
+    PLAYER = 'P',
+
 };
 
 struct Map {

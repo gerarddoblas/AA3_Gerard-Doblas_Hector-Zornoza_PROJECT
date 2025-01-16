@@ -5,6 +5,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|solutionrelative:AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|solutionrelative:AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|solutionrelative:AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|solutionrelative:AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Character.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{83932D61-43DE-4FDA-B173-086DB22787EE}|AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj|solutionrelative:AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +30,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Map.cpp",
+              "DocumentMoniker": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.cpp",
+              "RelativeDocumentMoniker": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.cpp",
+              "ToolTip": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.cpp",
+              "RelativeToolTip": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-16T13:09:11.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Map.h",
+              "DocumentMoniker": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.h",
+              "RelativeDocumentMoniker": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.h",
+              "ToolTip": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.h",
+              "RelativeToolTip": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Map.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-16T13:09:55.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Enemy.h",
+              "DocumentMoniker": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Enemy.h",
+              "RelativeDocumentMoniker": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Enemy.h",
+              "ToolTip": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Enemy.h",
+              "RelativeToolTip": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Enemy.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-16T13:09:41.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Character.h",
+              "DocumentMoniker": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Character.h",
+              "RelativeDocumentMoniker": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Character.h",
+              "ToolTip": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Character.h",
+              "RelativeToolTip": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\Character.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-16T13:09:23.223Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +92,7 @@
               "RelativeDocumentMoniker": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp",
               "ToolTip": "C:\\Users\\34657\\Documents\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_SOL\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp",
               "RelativeToolTip": "AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAqwHoAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-03T20:25:03.49Z",
               "EditorCaption": ""

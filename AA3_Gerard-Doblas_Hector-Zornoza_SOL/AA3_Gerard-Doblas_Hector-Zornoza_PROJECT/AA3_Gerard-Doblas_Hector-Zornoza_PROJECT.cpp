@@ -1,10 +1,10 @@
 #include <cstdlib>
 #include <cstdio>
+#include <conio.h>
 #include "Map.h"
 #include "Character.h"
 #include "Enemy.h"
-#include <Windows.h> //Preguntar si se puede usar
-
+#include <Windows.h>
 enum class MainManager
 {
 	FIGHTING,
@@ -79,27 +79,39 @@ void CharacterMove()
 
 }
 
+char WaitForInput() {
+	while (true) {
+		if (_kbhit()) { // Espera hasta que se presione una tecla
+			return _getch(); // Devuelve la tecla presionada
+		}
+	}
+}
+
 void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::FIGHTING;
+	MainManager currentScene = MainManager::DUNGEON;
 
 	Enemy e;
 
 	Character c;
 
 	Map map;
+	Box b;
 
 	bool gameIsOver = false;
 	bool MapWrite = false;
-	//while (!gameIsOver) {
+
+	while (!gameIsOver) {
+		system("cls");
 	switch (currentScene)
 	{
 	case MainManager::FIGHTING:
 		ShowHUDFighting(currentScene, c);
 		break;
 	case MainManager::DUNGEON:
+
 		ShowFirstHUDDungeon(currentScene);
 		map.SetMap();
 		ShowLastHUDDungeon(currentScene);
@@ -108,6 +120,7 @@ void main()
 		ShowHUDChest(currentScene);
 		break;
 	}
-	//}
+	char input = WaitForInput();
+	}
 
 }
