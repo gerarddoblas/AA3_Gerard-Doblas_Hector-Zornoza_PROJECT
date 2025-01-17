@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Map.h"
-#include "Character.h"														//El Game Manager y el cambiar el std:: vector, El Game Over y Victory, que no se impriman sobre ellos mimos
+#include "Character.h"														//El Game Manager y el cambiar el std:: vector, El Game Over y Victory, que no se impriman sobre ellos mimos, que deje de re imprimirse cada vez que se hace system lfs
 #include "Enemy.h"
 #include "Constantes.h"
 #include "Chest.h"
@@ -109,6 +109,21 @@ void ShowHUDChest(int& x, int& y, MainManager& currentScene, Chest& c, Player& p
 	
 }
 
+void ShowHUDGameover(Player& p)
+{
+	if (p.hp <= 0)
+	{
+		printf("------ GAME OVER ------\n");
+		printf("\n");
+		printf("");
+		printf("\n");
+		printf("");
+	}
+	else if (p.hp == 0)
+	{
+
+	}
+}
 void ChestSpawn(int& x,int& y, int& countBoxesX, int& countBoxesY)
 {
 	
@@ -141,13 +156,16 @@ void ChestSpawn(int& x,int& y, int& countBoxesX, int& countBoxesY)
 			}
 	for (int counterChest = 0; counterChest < CHESTS; counterChest++)
 	{
-		int randomChestX = rand() % PossibleChestCoordX.size();
-		int randomChestY = rand() % PossibleChestCoordY.size();
+		if (counterChest < CHESTS)
+		{
+			int randomChestX = rand() % PossibleChestCoordX.size();
+			int randomChestY = rand() % PossibleChestCoordY.size();
 
-		x = PossibleChestCoordX[randomChestX];
-		y = PossibleChestCoordY[randomChestX];
-		gotoxy(x, y);
-		printf("%C", ConversionElementChar(ElementSpawn::CHEST));
+			x = PossibleChestCoordX[randomChestX];
+			y = PossibleChestCoordY[randomChestX];
+			gotoxy(x, y);
+			printf("%C", ConversionElementChar(ElementSpawn::CHEST));
+		}
 	}
 }
 void CharacterMove() 
@@ -164,7 +182,7 @@ void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::FIGHTING;
+	MainManager currentScene = MainManager::DUNGEON;
 
 	Enemy e;
 
@@ -185,7 +203,6 @@ void main()
 	bool MapWrite = false;
 
 	while (!gameIsOver) {
-		system("cls");
 	switch (currentScene)
 	{
 	case MainManager::FIGHTING:
@@ -209,13 +226,14 @@ void main()
 		ChestSpawn(x, y, countBoxesX, countBoxesY);
 		ShowLastHUDDungeon(currentScene);
 		Input();
+		system("cls");
 		break;
 	case MainManager::CHEST:
 		ShowHUDChest(x, y, currentScene, c, p);
 		Input();
 		break;
 	case MainManager::GAMEOVER:
-
+		
 			break;
 	default:
 		break;
