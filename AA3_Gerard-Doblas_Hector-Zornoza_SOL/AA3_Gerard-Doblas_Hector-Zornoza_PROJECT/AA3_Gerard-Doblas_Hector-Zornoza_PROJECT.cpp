@@ -8,6 +8,7 @@
 #include "Enemy.h"
 #include "Constantes.h"
 #include "Chest.h"
+#include "Combat.h"
 #include <Windows.h>
 enum class MainManager
 {
@@ -55,7 +56,7 @@ void ShowFirstHUDDungeon(MainManager& currentScene, Player& p)
 
 void ShowLastHUDDungeon(MainManager& currentScene)
 {
-	gotoxy(0, 32);
+	gotoxy(0, NUM_ROWS*NUM_ROWS);
 	printf("____________________\n");
 	printf("\n");
 	printf("W A S D -> Move\n");
@@ -77,7 +78,7 @@ void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Player& p)
 	printf("\n");
 	printf("-- PLAYER --\n");
 	printf("[=========] %d / %d HP\n", p.hp, p.maxHP);
-	printf("[>>>>>>>>>] %d / %d Stamina\n", p.stam, MAX_INIT_ST);
+	printf("[>>>>>>>>>] %d / %d Stamina\n", p.stam, p.maxSTAM);
 	printf("\n");
 	printf("Potions %d / %d\n", p.potions, MAX_POTIONS);
 	printf("\n");
@@ -87,6 +88,7 @@ void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Player& p)
 	printf("D -> Defend\n");
 	printf("R -> Rest\n");
 	printf("P -> Potion\n");
+	printf("Enter your action: ");
 }
 
 void ShowHUDChest(int& x, int& y, MainManager& currentScene, Chest& c, Player& p)
@@ -162,7 +164,7 @@ void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::CHEST;
+	MainManager currentScene = MainManager::FIGHTING;
 
 	Enemy e;
 
@@ -173,6 +175,7 @@ void main()
 	Box b;
 
 	Chest c;
+	Combat co;
 
 	printf("%C", map.ConversionBoxChar(Box::VACIO));
 
@@ -187,18 +190,16 @@ void main()
 	{
 	case MainManager::FIGHTING:
 		ShowHUDFighting(x, y, currentScene, p);
-		Input();
+		co.CombatChooise(p,e);
+		//Input();
+		system("pause");
 		break;
 	case MainManager::DUNGEON:
 
 		ShowFirstHUDDungeon(currentScene, p);
 		map.SetMap();
-		//ChestSpawn(x, y, countBoxesX, countBoxesY);
-
+		ChestSpawn(x, y, countBoxesX, countBoxesY);
 		ShowLastHUDDungeon(currentScene);
-		
-		//gotoxy(2, 12);
-		//printf("X");
 		Input();
 		break;
 	case MainManager::CHEST:

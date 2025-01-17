@@ -87,7 +87,7 @@ void Chest::PossiblePotion(Player& p)
 {
 	possibility = rand() % 101;
 
-	if (possibility <= 100)
+	if (possibility <= 25)
 	{
 		printf("        > The Chest contains a potion!\n");
 		if (p.potions == MAX_POTIONS)

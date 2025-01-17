@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp" />
     <ClCompile Include="Chest.cpp" />
+    <ClCompile Include="Combat.cpp" />
     <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
     <ClInclude Include="Chest.h" />
+    <ClInclude Include="Combat.h" />
     <ClInclude Include="Constantes.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Map.h" />

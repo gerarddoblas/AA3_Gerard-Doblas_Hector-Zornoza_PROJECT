@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Constantes.h"
 struct Player
 {
 	int hp = rand()% (MAX_INIT_HP - MIN_INIT_HP) + MIN_INIT_HP; // Player HP
