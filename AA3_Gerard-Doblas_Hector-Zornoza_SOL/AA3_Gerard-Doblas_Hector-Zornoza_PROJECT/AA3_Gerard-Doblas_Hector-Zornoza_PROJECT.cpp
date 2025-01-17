@@ -168,9 +168,12 @@ void ChestSpawn(int& x,int& y, int& countBoxesX, int& countBoxesY)
 		}
 	}
 }
-void CharacterMove() 
+void PlayerSpawn(int& x, int& y,Player& p) 
 {
-
+	x = 12;
+	y = 18;
+	gotoxy(x, y);
+	std::cout << p.player;
 }
 
 void Input()
@@ -223,8 +226,10 @@ void main()
 
 		ShowFirstHUDDungeon(currentScene, p);
 		map.SetMap();
+		PlayerSpawn(x, y, p);
 		ChestSpawn(x, y, countBoxesX, countBoxesY);
 		ShowLastHUDDungeon(currentScene);
+		p.PlayerMove();
 		Input();
 		system("cls");
 		break;
