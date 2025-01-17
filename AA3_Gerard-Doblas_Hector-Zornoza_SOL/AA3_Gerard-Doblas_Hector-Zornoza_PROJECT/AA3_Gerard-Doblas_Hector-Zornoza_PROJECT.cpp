@@ -193,6 +193,14 @@ void main()
 		co.CombatChooise(p,e);
 		//Input();
 		system("pause");
+		if (p.hp == 0 && p.hp < 0)
+		{
+			currentScene = MainManager::GAMEOVER;
+		}
+		else if(e.hp == 0 && e.hp < 0)
+		{
+			currentScene = MainManager::DUNGEON;
+		}
 		break;
 	case MainManager::DUNGEON:
 
@@ -205,6 +213,11 @@ void main()
 	case MainManager::CHEST:
 		ShowHUDChest(x, y, currentScene, c, p);
 		Input();
+		break;
+	case MainManager::GAMEOVER:
+
+			break;
+	default:
 		break;
 	}
 	}
