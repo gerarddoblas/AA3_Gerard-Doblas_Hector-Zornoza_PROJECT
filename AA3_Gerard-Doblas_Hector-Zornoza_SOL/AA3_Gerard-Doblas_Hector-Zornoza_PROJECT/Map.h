@@ -15,6 +15,4 @@ public:
     char ConversionBoxChar(Box boxType);
     void SetMap();
 private:
-    int FILAS;
-    int COLUMNAS;
 };

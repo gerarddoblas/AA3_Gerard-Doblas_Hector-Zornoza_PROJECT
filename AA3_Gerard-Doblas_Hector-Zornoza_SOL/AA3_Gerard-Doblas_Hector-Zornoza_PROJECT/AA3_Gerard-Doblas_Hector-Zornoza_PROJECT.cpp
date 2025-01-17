@@ -7,6 +7,7 @@
 #include "Character.h"
 #include "Enemy.h"
 #include "Constantes.h"
+#include "Chest.h"
 #include <Windows.h>
 enum class MainManager
 {
@@ -41,15 +42,15 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
-void ShowFirstHUDDungeon(MainManager& currentScene)
+void ShowFirstHUDDungeon(MainManager& currentScene, Player& p)
 {
 	printf("------ DUNGEON ------\n");
 	printf("\n");
 	printf("E -> Enemy    P -> Player    C -> Chest\n");
 	printf("\n");
-	printf("Health: \n");
-	printf("Potions: \n");
-	printf("Moves:  \n");
+	printf("Health: %d / %d\n", p.hp, p.maxHP);
+	printf("Potions: %d / %d\n", p.potions, MAX_POTIONS);
+	printf("Moves: %d / %d\n", p.agility, MAX_AGILITY);
 }
 
 void ShowLastHUDDungeon(MainManager& currentScene)
@@ -63,7 +64,7 @@ void ShowLastHUDDungeon(MainManager& currentScene)
 	printf("Enter your action: ");
 }
 
-void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Character& c)
+void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Player& p)
 {
 
 	printf("------ COMBAT ------\n");
@@ -75,10 +76,10 @@ void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Character& c)
 	printf("---------------------\n");
 	printf("\n");
 	printf("-- PLAYER --\n");
-	printf("[=========] %d / %d HP\n", c.hp, MAX_INIT_HP);
-	printf("[>>>>>>>>>] %d / %d Stamina\n", c.stam, MAX_INIT_ST);
+	printf("[=========] %d / %d HP\n", p.hp, p.maxHP);
+	printf("[>>>>>>>>>] %d / %d Stamina\n", p.stam, MAX_INIT_ST);
 	printf("\n");
-	printf("Potions %d / %d\n", c.potions, MAX_POTIONS);
+	printf("Potions %d / %d\n", p.potions, MAX_POTIONS);
 	printf("\n");
 	printf("____________________________________\n");
 	printf("\n");
@@ -88,9 +89,22 @@ void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Character& c)
 	printf("P -> Potion\n");
 }
 
-void ShowHUDChest(MainManager& currentScene)
+void ShowHUDChest(int& x, int& y, MainManager& currentScene, Chest& c, Player& p)
 {
-
+	printf("------ CHEST ------\n");
+	printf("\n");
+	printf(" > You open the chest and it contains the following:\n");
+	printf("\n");
+	c.GoldObtain();
+	printf("        >%d gold!\n", c.goldChest);
+	printf("        > The Chest contains Gear!\n");
+	c.ChestLogic(p);
+	printf("\n");
+	c.PossiblePotion(p);
+	printf("____________________________________\n");
+	printf("\n");
+	printf("Enter any character to continue...");
+	
 }
 
 void ChestSpawn(int& x,int& y, int& countBoxesX, int& countBoxesY)
@@ -148,15 +162,17 @@ void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::DUNGEON;
+	MainManager currentScene = MainManager::CHEST;
 
 	Enemy e;
 
-	Character c;
+	Player p;
 
 	Map map;
 
 	Box b;
+
+	Chest c;
 
 	printf("%C", map.ConversionBoxChar(Box::VACIO));
 
@@ -170,14 +186,14 @@ void main()
 	switch (currentScene)
 	{
 	case MainManager::FIGHTING:
-		ShowHUDFighting(x, y, currentScene, c);
+		ShowHUDFighting(x, y, currentScene, p);
 		Input();
 		break;
 	case MainManager::DUNGEON:
 
-		ShowFirstHUDDungeon(currentScene);
+		ShowFirstHUDDungeon(currentScene, p);
 		map.SetMap();
-		ChestSpawn(x, y, countBoxesX, countBoxesY);
+		//ChestSpawn(x, y, countBoxesX, countBoxesY);
 
 		ShowLastHUDDungeon(currentScene);
 		
@@ -186,7 +202,7 @@ void main()
 		Input();
 		break;
 	case MainManager::CHEST:
-		ShowHUDChest(currentScene);
+		ShowHUDChest(x, y, currentScene, c, p);
 		Input();
 		break;
 	}
