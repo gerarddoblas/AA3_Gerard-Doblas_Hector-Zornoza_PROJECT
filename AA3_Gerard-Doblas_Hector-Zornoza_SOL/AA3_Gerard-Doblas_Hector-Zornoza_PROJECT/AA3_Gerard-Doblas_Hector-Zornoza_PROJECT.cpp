@@ -1,9 +1,12 @@
 #include <cstdlib>
 #include <cstdio>
 #include <conio.h>
+#include <vector>
+#include <iostream>
 #include "Map.h"
 #include "Character.h"
 #include "Enemy.h"
+#include "Constantes.h"
 #include <Windows.h>
 enum class MainManager
 {
@@ -15,6 +18,20 @@ enum class MainManager
 
 	GAMEOVER
 };
+
+enum class ElementSpawn {
+	PLAYER = 'P',
+
+	ENEMY = 'E',
+
+	CHEST = 'C',
+
+};
+
+char ConversionElementChar(ElementSpawn elementType)
+{
+	return static_cast<char>(elementType);
+}
 
 void gotoxy(int x, int y)
 {
@@ -37,6 +54,7 @@ void ShowFirstHUDDungeon(MainManager& currentScene)
 
 void ShowLastHUDDungeon(MainManager& currentScene)
 {
+	gotoxy(0, 32);
 	printf("____________________\n");
 	printf("\n");
 	printf("W A S D -> Move\n");
@@ -45,8 +63,9 @@ void ShowLastHUDDungeon(MainManager& currentScene)
 	printf("Enter your action: ");
 }
 
-void ShowHUDFighting(MainManager& currentScene, Character& c)
+void ShowHUDFighting(int& x, int & y, MainManager& currentScene, Character& c)
 {
+
 	printf("------ COMBAT ------\n");
 	printf("\n");
 	printf("--ENEMY--\n");
@@ -74,9 +93,46 @@ void ShowHUDChest(MainManager& currentScene)
 
 }
 
-void ChestSpawn()
+void ChestSpawn(int& x,int& y, int& countBoxesX, int& countBoxesY)
 {
-		
+	
+		std::vector<short> PossibleChestCoordX(NUM_COLS);
+		std::vector<short> PossibleChestCoordY(NUM_ROWS);
+		countBoxesX = 5;
+		countBoxesY = 3;
+		for (int i = 0; i < NUM_COLS; ++i)
+		{
+			if (i == 0)
+			{
+				PossibleChestCoordX[i] = 2;
+			}
+			else {
+				PossibleChestCoordX[i] = 2 + countBoxesX;
+				countBoxesX = countBoxesX + 5;
+			}
+		}
+
+		for (int j = 0; j < NUM_ROWS; ++j)
+			if (j == 0)
+			{
+				PossibleChestCoordY[j] = 9;
+
+			}
+			else {
+				PossibleChestCoordY[j] = 9 + countBoxesY;
+				countBoxesY = countBoxesY + 3;
+
+			}
+	for (int counterChest = 0; counterChest < CHESTS; counterChest++)
+	{
+		int randomChestX = rand() % PossibleChestCoordX.size();
+		int randomChestY = rand() % PossibleChestCoordY.size();
+
+		x = PossibleChestCoordX[randomChestX];
+		y = PossibleChestCoordY[randomChestX];
+		gotoxy(x, y);
+		printf("%C", ConversionElementChar(ElementSpawn::CHEST));
+	}
 }
 void CharacterMove() 
 {
@@ -99,8 +155,13 @@ void main()
 	Character c;
 
 	Map map;
+
 	Box b;
 
+	printf("%C", map.ConversionBoxChar(Box::VACIO));
+
+	int x, y;
+	int countBoxesX, countBoxesY;
 	bool gameIsOver = false;
 	bool MapWrite = false;
 
@@ -109,14 +170,19 @@ void main()
 	switch (currentScene)
 	{
 	case MainManager::FIGHTING:
-		ShowHUDFighting(currentScene, c);
+		ShowHUDFighting(x, y, currentScene, c);
 		Input();
 		break;
 	case MainManager::DUNGEON:
 
 		ShowFirstHUDDungeon(currentScene);
 		map.SetMap();
+		ChestSpawn(x, y, countBoxesX, countBoxesY);
+
 		ShowLastHUDDungeon(currentScene);
+		
+		//gotoxy(2, 12);
+		//printf("X");
 		Input();
 		break;
 	case MainManager::CHEST:

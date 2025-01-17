@@ -8,12 +8,6 @@ enum class Box {
 
     TECHO = '_',
 
-    ENEMY = 'E',
-
-    CHEST = 'C',
-
-    PLAYER = 'P',
-
 };
 
 struct Map {
