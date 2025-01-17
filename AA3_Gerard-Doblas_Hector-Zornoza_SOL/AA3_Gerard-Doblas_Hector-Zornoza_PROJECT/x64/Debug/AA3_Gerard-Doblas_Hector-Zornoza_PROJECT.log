@@ -1,5 +1,16 @@
-﻿  Combat.cpp
-C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(12,10): warning C4778: 'printf' : unterminated format string '%'
-C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(44,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(45,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+﻿  AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(164,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(165,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(175,6): warning C4101: 'b': unreferenced local variable
+  Combat.cpp
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(7,32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(13,10): warning C4778: 'printf' : unterminated format string '%'
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(28,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(29,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(37,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(67,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(68,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(96,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(97,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj -> C:\Users\GerardDoblasPerez\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe
