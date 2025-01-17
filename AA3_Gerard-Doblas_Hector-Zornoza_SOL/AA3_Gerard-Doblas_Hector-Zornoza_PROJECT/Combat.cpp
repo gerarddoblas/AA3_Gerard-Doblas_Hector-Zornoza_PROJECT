@@ -1,7 +1,7 @@
 #include <conio.h>
 #include <conio.h>
 #include "Combat.h"
-#include "windows.h"
+#include "windows.h"																						//Los printf y comprovar qur funciona todo
 void Combat::CombatChooise(Player& p, Enemy& e) {
 	std::cin >> chInput;
 	enemyAttack = (e.maxSTAM * 20)/100;

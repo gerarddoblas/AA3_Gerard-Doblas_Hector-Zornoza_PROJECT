@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Map.h"
-#include "Character.h"
+#include "Character.h"														//El Game Manager y el cambiar el std:: vector, El Game Over y Victory, que no se impriman sobre ellos mimos
 #include "Enemy.h"
 #include "Constantes.h"
 #include "Chest.h"
