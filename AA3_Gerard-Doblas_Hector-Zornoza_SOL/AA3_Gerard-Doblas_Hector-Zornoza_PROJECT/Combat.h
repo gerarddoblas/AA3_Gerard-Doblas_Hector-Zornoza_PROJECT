@@ -1,6 +1,5 @@
 #pragma once
-#include <iostream>
-#include "Character.h"
+#include "Player.h"
 #include "Enemy.h"
 struct Combat {
 	Player p;

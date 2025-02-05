@@ -2,9 +2,8 @@
 #include <cstdio>
 #include <conio.h>
 #include <vector>
-#include <iostream>
 #include "Map.h"
-#include "Character.h"														//El Game Manager y el cambiar el std:: vector, El Game Over y Victory, que no se impriman sobre ellos mimos, que deje de re imprimirse cada vez que se hace system lfs
+#include "Player.h"														//El Game Manager y el cambiar el std:: vector, El Game Over y Victory, que no se impriman sobre ellos mimos, que deje de re imprimirse cada vez que se hace system lfs
 #include "Enemy.h"
 #include "Constantes.h"
 #include "Chest.h"
@@ -176,16 +175,11 @@ void PlayerSpawn(int& x, int& y,Player& p)
 	std::cout << p.player;
 }
 
-void Input()
-{
-	while (std::cin.get() != '\n');
-}
-
 void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::DUNGEON;
+	MainManager currentScene = MainManager::FIGHTING;
 
 	Enemy e;
 
@@ -196,6 +190,7 @@ void main()
 	Box b;
 
 	Chest c;
+
 	Combat co;
 
 	printf("%C", map.ConversionBoxChar(Box::VACIO));
@@ -211,31 +206,29 @@ void main()
 	case MainManager::FIGHTING:
 		ShowHUDFighting(x, y, currentScene, p);
 		co.CombatChooise(p,e);
-		//Input();
-		system("pause");
 		if (p.hp == 0 && p.hp < 0)
 		{
 			currentScene = MainManager::GAMEOVER;
 		}
-		else if(e.hp == 0 && e.hp < 0)
+		else if(e.hp == 0 || e.hp < 0)
 		{
 			currentScene = MainManager::DUNGEON;
 		}
+		system("cls");
 		break;
 	case MainManager::DUNGEON:
 
 		ShowFirstHUDDungeon(currentScene, p);
 		map.SetMap();
-		PlayerSpawn(x, y, p);
-		ChestSpawn(x, y, countBoxesX, countBoxesY);
-		ShowLastHUDDungeon(currentScene);
-		p.PlayerMove();
-		Input();
-		system("cls");
+		std::cin >> p.hp;
+		//PlayerSpawn(x, y, p);
+		//ChestSpawn(x, y, countBoxesX, countBoxesY);
+		//ShowLastHUDDungeon(currentScene);
+		//Input();
 		break;
 	case MainManager::CHEST:
 		ShowHUDChest(x, y, currentScene, c, p);
-		Input();
+		//Input();
 		break;
 	case MainManager::GAMEOVER:
 		

@@ -12,5 +12,5 @@ public:
 	int agility = 3; // Player moves
 	int potions = 3; // Player potions, restore 40% HP
 	char player = 'P'; // Player
-	void PlayerMove();
+	//void PlayerMove();
 };

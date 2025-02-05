@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Constantes.h"
-#include "Character.h"
+#include "Player.h"
 
 struct Chest
 {
@@ -11,6 +11,7 @@ public:
 	void GoldObtain();
 	void ChestLogic(Player& p);
 	void PossiblePotion(Player& p);
+	void Input(Player& p);
 private:
 	int possibility;
 	int Gears;
