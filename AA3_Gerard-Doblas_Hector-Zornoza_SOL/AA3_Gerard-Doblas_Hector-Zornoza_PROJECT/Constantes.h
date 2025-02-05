@@ -2,10 +2,10 @@
 #include <iostream>
 
 // MAP
-#define NUM_ROWS 3
-#define NUM_COLS 3
-#define ROWS_SIZES 6
-#define COLS_SIZE 6
+#define NUM_ROWS 5
+#define NUM_COLS 5
+#define ROWS_SIZES 3
+#define COLS_SIZE 3
 
 
 // Character

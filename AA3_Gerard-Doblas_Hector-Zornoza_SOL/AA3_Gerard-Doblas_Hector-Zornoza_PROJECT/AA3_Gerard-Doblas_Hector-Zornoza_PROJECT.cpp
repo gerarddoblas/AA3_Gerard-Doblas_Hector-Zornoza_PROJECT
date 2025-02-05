@@ -8,6 +8,7 @@
 #include "Constantes.h"
 #include "Chest.h"
 #include "Combat.h"
+#include "Types.h"
 #include <Windows.h>
 enum class MainManager
 {
@@ -99,7 +100,7 @@ void ShowHUDChest(int& x, int& y, MainManager& currentScene, Chest& c, Player& p
 	c.GoldObtain();
 	printf("        >%d gold!\n", c.goldChest);
 	printf("        > The Chest contains Gear!\n");
-	c.ChestLogic(p);
+	c.ChestRewards(p);
 	printf("\n");
 	c.PossiblePotion(p);
 	printf("____________________________________\n");
@@ -123,46 +124,25 @@ void ShowHUDGameover(Player& p)
 
 	}
 }
-void ChestSpawn(int& x,int& y, int& countBoxesX, int& countBoxesY)
+
+void ChestSpawn(Map& m, Coord& co, int* x,int* y)
 {
-	
-		std::vector<short> PossibleChestCoordX(NUM_COLS);
-		std::vector<short> PossibleChestCoordY(NUM_ROWS);
-		countBoxesX = 5;
-		countBoxesY = 3;
-		for (int i = 0; i < NUM_COLS; ++i)
-		{
-			if (i == 0)
-			{
-				PossibleChestCoordX[i] = 2;
-			}
-			else {
-				PossibleChestCoordX[i] = 2 + countBoxesX;
-				countBoxesX = countBoxesX + 5;
-			}
-		}
-
-		for (int j = 0; j < NUM_ROWS; ++j)
-			if (j == 0)
-			{
-				PossibleChestCoordY[j] = 9;
-
-			}
-			else {
-				PossibleChestCoordY[j] = 9 + countBoxesY;
-				countBoxesY = countBoxesY + 3;
-
-			}
-	for (int counterChest = 0; counterChest < CHESTS; counterChest++)
+	int actuallyChests = 0;
+	co.Coords();
+	while (actuallyChests < CHESTS)
 	{
-		if (counterChest < CHESTS)
-		{
-			int randomChestX = rand() % PossibleChestCoordX.size();
-			int randomChestY = rand() % PossibleChestCoordY.size();
+		int randomChestX = rand() % NUM_COLS;
+		int randomChestY = rand() % NUM_ROWS;
 
-			x = PossibleChestCoordX[randomChestX];
-			y = PossibleChestCoordY[randomChestX];
-			gotoxy(x, y);
+		*x = co.PossibleCoordX[randomChestX];
+		*y = co.PossibleCoordY[randomChestY];
+
+		if (*x != co.lastX && *y != co.lastY)
+		{
+			co.lastX = *x;
+			co.lastY = *y;
+			gotoxy(*x, *y);
+			actuallyChests++;
 			printf("%C", ConversionElementChar(ElementSpawn::CHEST));
 		}
 	}
@@ -179,24 +159,25 @@ void main()
 {
 	srand(time(NULL));
 
-	MainManager currentScene = MainManager::FIGHTING;
+	MainManager currentScene = MainManager::DUNGEON;
 
 	Enemy e;
 
 	Player p;
 
-	Map map;
+	Map m;
 
 	Box b;
 
 	Chest c;
 
-	Combat co;
+	Combat f;
 
-	printf("%C", map.ConversionBoxChar(Box::VACIO));
+	Coord co;
+
+	printf("%C", m.ConversionBoxChar(Box::VACIO));
 
 	int x, y;
-	int countBoxesX, countBoxesY;
 	bool gameIsOver = false;
 	bool MapWrite = false;
 
@@ -205,7 +186,7 @@ void main()
 	{
 	case MainManager::FIGHTING:
 		ShowHUDFighting(x, y, currentScene, p);
-		co.CombatChooise(p,e);
+		f.CombatChooise(p,e);
 		if (p.hp == 0 && p.hp < 0)
 		{
 			currentScene = MainManager::GAMEOVER;
@@ -219,16 +200,17 @@ void main()
 	case MainManager::DUNGEON:
 
 		ShowFirstHUDDungeon(currentScene, p);
-		map.SetMap();
-		std::cin >> p.hp;
+		m.SetMap();
 		//PlayerSpawn(x, y, p);
-		//ChestSpawn(x, y, countBoxesX, countBoxesY);
-		//ShowLastHUDDungeon(currentScene);
-		//Input();
+		ChestSpawn(m,co, &x, &y);
+
+
+
+		ShowLastHUDDungeon(currentScene);
+		system("pause");
 		break;
 	case MainManager::CHEST:
 		ShowHUDChest(x, y, currentScene, c, p);
-		//Input();
 		break;
 	case MainManager::GAMEOVER:
 		

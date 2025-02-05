@@ -8,7 +8,8 @@ void Chest::GoldObtain()
 	goldChest = rand() % (MAX_GOLD - MIN_GOLD) + MIN_GOLD;
 	p.gold = p.gold + goldChest;
 }
-void Chest::ChestLogic(Player& p) 
+
+void Chest::ChestRewards(Player& p) 
 {
 	int Gears = rand()%11;
 	switch (Gears)

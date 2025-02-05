@@ -1,27 +1,26 @@
 #include <conio.h>
 #include <conio.h>
 #include "Combat.h"
-#include "windows.h"																						//Los printf y comprovar qur funciona todo
+#include "windows.h"																						//Los printf
 void Combat::CombatChooise(Player& p, Enemy& e) {
-	scanf_s("%c",&chInput);
 	enemyAttack = (e.maxSTAM * 20)/100;
 	if (e.hp < ((e.maxHP * 30) / 100) && e.stam < ((e.maxSTAM * 30) / 100))
 	{
 		Defend = true;
 	}
-	else
+	else if (e.hp > ((e.maxHP * 30) / 100) && e.stam > ((e.maxSTAM * 30) / 100))
 	{
 		Defend = false;
 	}
-	if (e.stam < ((e.maxSTAM * 20) / 100))
+	if (e.stam < ((e.maxSTAM * 20) / 100) && Defend == false)
 	{
 		Rest = true;
 	}
-	else
+	else if (e.stam > ((e.maxSTAM * 20) / 100))
 	{
 		Rest = false;
 	}
-
+	scanf_s("%c", &chInput);
 	switch (chInput)
 	{
 	case 'A'://Si el player ataca
@@ -62,6 +61,8 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 			{
 				printf("");
 				e.stam = e.stam + ((e.maxSTAM * 25)/100);
+				if (e.stam > e.maxSTAM)
+					e.stam = e.maxSTAM;
 				e.hp = e.hp - ((playerAttack * 75) / 100);
 				printf("\n");
 				printf("Enter a character to update the fight...");
@@ -88,16 +89,23 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 			e.stam = e.stam - enemyAttack;
 			p.hp = p.hp - ((enemyAttack * 75) / 100);
 			p.stam = p.stam + ((p.maxSTAM * 25) / 100);
+			if (p.stam > p.maxSTAM)
+				p.stam = p.maxSTAM;
 			printf("\n");
 			printf("Enter a character to update the fight...");
 			getchar();
 			getchar();
+
 		}
 		else if (Defend)//Si el enemigo se defiende
 		{
 			printf("");
 			e.stam = e.stam + ((e.maxSTAM * 25) / 100);
+			if (e.stam > e.maxSTAM)
+				e.stam = e.maxSTAM;
 			p.stam = p.stam + ((p.maxSTAM * 25) / 100);
+			if (p.stam > p.maxSTAM)
+				p.stam = p.maxSTAM;
 			printf("\n");
 			printf("Enter a character to update the fight...");
 			getchar();
@@ -108,6 +116,8 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 			printf("");
 			e.stam = e.maxSTAM;
 			p.stam = p.stam + ((p.maxSTAM * 25) / 100);
+			if (p.stam > p.maxSTAM)
+				p.stam = p.maxSTAM;
 			printf("\n");
 			printf("Enter a character to update the fight...");
 			getchar();
@@ -131,6 +141,8 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		{
 			printf("");
 			e.stam = e.stam + ((e.maxSTAM * 25) / 100);
+			if (e.stam > e.maxSTAM)
+				e.stam = e.maxSTAM;
 			printf("\n");
 			printf("Enter a character to update the fight...");
 			getchar();
@@ -152,16 +164,22 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		if (p.potions != 0)
 		{
 			printf("");
-			p.hp = ((p.hp * 40) / 100);
+			p.hp = p.hp + ((p.hp * 40) / 100);
+			if (p.hp > p.maxHP)
+				p.hp = p.maxHP;
 			p.potions--;
 			printf("\n");
 			printf("Enter a character to update the fight...");
+			getchar();
+			getchar();
 		}
 		else
 		{
 			printf("");
 			printf("\n");
 			printf("Enter a character to update the fight...");
+			getchar();
+			getchar();
 		}
 		break;
 	default:

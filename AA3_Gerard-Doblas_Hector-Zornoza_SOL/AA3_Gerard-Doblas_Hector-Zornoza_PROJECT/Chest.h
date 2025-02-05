@@ -9,10 +9,11 @@ struct Chest
 public:
 	int goldChest;
 	void GoldObtain();
-	void ChestLogic(Player& p);
+	void CoordChest();
+	void ChestRewards(Player& p);
 	void PossiblePotion(Player& p);
-	void Input(Player& p);
 private:
+
 	int possibility;
 	int Gears;
 };
