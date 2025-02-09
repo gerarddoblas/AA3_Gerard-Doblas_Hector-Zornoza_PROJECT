@@ -1,11 +1,13 @@
 #pragma once
-#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <time.h>
 
 // MAP
 #define NUM_ROWS 5
 #define NUM_COLS 5
 #define ROWS_SIZES 3
-#define COLS_SIZE 3
+#define COLS_SIZES 3
 
 
 // Character

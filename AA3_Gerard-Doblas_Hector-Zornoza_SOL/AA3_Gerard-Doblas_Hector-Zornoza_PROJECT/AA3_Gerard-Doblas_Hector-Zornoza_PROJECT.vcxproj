@@ -127,9 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Chest.cpp" />
     <ClCompile Include="Combat.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Types.cpp" />

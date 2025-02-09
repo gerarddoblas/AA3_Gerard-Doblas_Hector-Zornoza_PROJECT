@@ -1,6 +1,3 @@
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
 #include "Chest.h"
 
 void Chest::GoldObtain()
@@ -103,4 +100,53 @@ void Chest::PossiblePotion(Player& p)
 	}
 }
 
+void Chest::ChestsSpawn(Coord& co,Player& p, int* x, int* y)
+{
+	co.gotoxy(0, 0);
+	ChestsInMap;
+	if (ChestsInMap != chests)
+	{
+	
+		while (ChestsInMap < CHESTS)
+		{
+			int randomChestX = rand() % NUM_COLS;
+			int randomChestY = rand() % NUM_ROWS;
 
+			*x = co.PossibleCoordX[randomChestX];
+			*y = co.PossibleCoordY[randomChestY];
+
+			for (int i = 0; i < ChestsInMap; i++)
+			{
+				if (arrChestX[i] == *x && arrChestY[i] == *y)
+				{
+					actualChest = true;
+					break;
+				}
+			}
+			if (*x != p.playerX && *y != p.playerY && !actualChest)
+			{
+				arrChestX[ChestsInMap] = *x;
+				arrChestY[ChestsInMap] = *y;
+				co.gotoxy(*x, *y);
+				ChestsInMap++;
+				printf("%c", chest);
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < CHESTS; i++)
+		{
+			if (p.playerX == arrChestX[i] && p.playerY == arrChestY[i])
+			{
+				arrChestX[i] = -1;
+				arrChestX[i] = -1;
+			}
+			else if (arrChestX[i] != -1 && arrChestY[i] != -1)
+			{
+				co.gotoxy(arrChestX[i], arrChestY[i]);
+				printf("%c", chest);
+			}
+		}
+	}
+}

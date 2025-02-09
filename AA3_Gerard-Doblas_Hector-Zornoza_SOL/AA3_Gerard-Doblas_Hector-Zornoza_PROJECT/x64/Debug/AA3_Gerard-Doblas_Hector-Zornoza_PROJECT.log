@@ -1,5 +1,8 @@
-﻿  AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp
-C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(161,1): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(162,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.cpp(172,6): warning C4101: 'b': variable local sin referencia
+﻿  Main.cpp
+  Player.cpp
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Main.cpp(108,1): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Main.cpp(109,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Main.cpp(119,6): warning C4101: 'b': variable local sin referencia
+  Generando código...
+  LINK : no se encontró C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj -> C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe

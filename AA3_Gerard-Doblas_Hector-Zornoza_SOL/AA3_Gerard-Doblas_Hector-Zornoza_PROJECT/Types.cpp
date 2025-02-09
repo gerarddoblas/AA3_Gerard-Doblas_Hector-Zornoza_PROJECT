@@ -1,5 +1,12 @@
 #include "Types.h"
 
+void Coord::gotoxy(int x, int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
 void Coord::Coords()
 {
 
@@ -26,5 +33,6 @@ void Coord::Coords()
 			countBoxesY = countBoxesY + 3;
 		}
 	}
-
+	countBoxesX = 5;
+	countBoxesY = 3;
 }

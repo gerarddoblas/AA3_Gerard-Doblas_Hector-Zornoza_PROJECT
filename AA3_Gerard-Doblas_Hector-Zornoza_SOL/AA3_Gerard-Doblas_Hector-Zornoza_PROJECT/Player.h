@@ -1,8 +1,10 @@
 #pragma once
 #include "Constantes.h"
+#include "Types.h"
+
 struct Player
 {
-
+	Coord co;
 public:
 	int hp = rand()% (MAX_INIT_HP - MIN_INIT_HP) + MIN_INIT_HP; // Player HP
 	int maxHP = hp;
@@ -12,5 +14,8 @@ public:
 	int agility = 3; // Player moves
 	int potions = 3; // Player potions, restore 40% HP
 	char player = 'P'; // Player
-	//void PlayerMove();
+	int playerX = 12;
+	int playerY = 12;
+	void PlayerSpawn(int& x, int& y, Coord& co);
+	void PlayerMove();
 };

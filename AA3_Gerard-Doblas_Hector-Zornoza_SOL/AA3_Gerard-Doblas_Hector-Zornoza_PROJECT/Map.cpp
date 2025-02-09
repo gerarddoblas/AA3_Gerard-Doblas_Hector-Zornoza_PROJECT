@@ -16,7 +16,7 @@ void Map::SetMap()
 				{
 					printf("%C", ConversionBoxChar(Box::VACIO));
 				}
-				for (int j = 0; j <= COLS_SIZE - 1; j++)
+				for (int j = 0; j <= COLS_SIZES - 1; j++)
 				{
 					if (j == 0)
 					{
@@ -35,7 +35,7 @@ void Map::SetMap()
 			{
 				printf("%C", ConversionBoxChar(Box::PARED));
 
-				for (int l = 0; l <= COLS_SIZE - 1; l++)
+				for (int l = 0; l <= COLS_SIZES - 1; l++)
 				{
 					switch (k) {
 					case ROWS_SIZES - 1:
