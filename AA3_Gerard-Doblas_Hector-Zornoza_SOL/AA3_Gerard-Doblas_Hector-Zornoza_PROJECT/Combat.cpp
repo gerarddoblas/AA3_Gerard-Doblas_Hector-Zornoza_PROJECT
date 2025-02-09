@@ -1,8 +1,15 @@
 #include <conio.h>
 #include <conio.h>
 #include "Combat.h"
-#include "windows.h"																						//Los printf
+#include "windows.h"			
+
 void Combat::CombatChooise(Player& p, Enemy& e) {
+	if(firstTry < 1)
+	{ 
+		e.hp = rand() % (MAX_INIT_HP_EN - MIN_INIT_HP_EN) + MIN_INIT_HP_EN;
+		e.stam = rand() % (MAX_INIT_ST_EN - MIN_INIT_ST_EN) + MIN_INIT_ST_EN;
+		firstTry++;
+	}
 	enemyAttack = (e.maxSTAM * 20)/100;
 	if (e.hp < ((e.maxHP * 30) / 100) && e.stam < ((e.maxSTAM * 30) / 100))
 	{
@@ -20,20 +27,31 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 	{
 		Rest = false;
 	}
-	scanf_s("%c", &chInput);
+	scanf_s(" %c", &chInput,1);
 	switch (chInput)
 	{
 	case 'A'://Si el player ataca
-		while (true)
+		if (p.stam <= 0)
 		{
 			printf("\n");
-			printf("Enter the attack value (Max %d): %", p.maxSTAM);
-			scanf_s("%d", &playerAttack);
-			if (playerAttack <= p.maxSTAM && playerAttack > 0)
-				break;
-		}
-		p.stam = p.stam - playerAttack;
-		
+			printf("Your action was invalid! Enter a character to update the fight...");
+			getchar();
+			getchar();
+			break;
+		}else
+		{
+			while (true)
+			{
+				printf("\n");
+				printf("Enter the attack value (Max %d): %", p.maxSTAM);
+				scanf_s("%d", &playerAttack);
+				if (playerAttack <= p.maxSTAM && playerAttack > 0)
+					break;
+			}
+			p.stam = p.stam - playerAttack;
+			if (p.stam < 0)
+				p.stam = 0;
+
 			if (Defend == false && Rest == false)//Si el enemigo ataca
 			{
 				if (playerAttack < enemyAttack)//Si el enemigo acierta
@@ -48,6 +66,7 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 				}
 				else//Si el enemigo no acierta
 				{
+
 					printf("You strike the enemy with more force! The enemy receives %d damage", playerAttack);
 					e.hp = e.hp - playerAttack;
 					e.stam = e.stam - enemyAttack;
@@ -59,8 +78,8 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 			}
 			else if (Defend)//Si el enemigo se defiende
 			{
-				printf("");
-				e.stam = e.stam + ((e.maxSTAM * 25)/100);
+				printf("Garbage, the enemy has defended, but receive &d damage", (int)(playerAttack * 75) / 100);
+				e.stam = e.stam + ((e.maxSTAM * 25) / 100);
 				if (e.stam > e.maxSTAM)
 					e.stam = e.maxSTAM;
 				e.hp = e.hp - ((playerAttack * 75) / 100);
@@ -70,9 +89,9 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 				getchar();
 
 			}
-			else if(Rest)//Si el enemigo descansa
+			else if (Rest)//Si el enemigo descansa
 			{
-				printf("");
+				printf("You've hit him while he was resting, the enemy receive &d damage", (int)playerAttack);
 				e.hp = e.hp - playerAttack;
 				e.stam = e.maxSTAM;
 				printf("\n");
@@ -80,17 +99,18 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 				getchar();
 				getchar();
 			}
-		break;
+			break;
+		}
 	case 'D'://Si el player se defiende
 		printf("\n");
 		if (Defend == false && Rest == false)
 		{
-			printf("");
 			e.stam = e.stam - enemyAttack;
 			p.hp = p.hp - ((enemyAttack * 75) / 100);
 			p.stam = p.stam + ((p.maxSTAM * 25) / 100);
 			if (p.stam > p.maxSTAM)
 				p.stam = p.maxSTAM;
+			printf("You defend the enemy blow, but receive %d damage", (int)(enemyAttack * 75)/100);
 			printf("\n");
 			printf("Enter a character to update the fight...");
 			getchar();
@@ -99,7 +119,7 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		}
 		else if (Defend)//Si el enemigo se defiende
 		{
-			printf("");
+			printf("You have both defended yourselves");
 			e.stam = e.stam + ((e.maxSTAM * 25) / 100);
 			if (e.stam > e.maxSTAM)
 				e.stam = e.maxSTAM;
@@ -113,7 +133,7 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		}
 		else if (Rest)//Si el enemigo descansa
 		{
-			printf("");
+			printf("Both of you have taken a rest");
 			e.stam = e.maxSTAM;
 			p.stam = p.stam + ((p.maxSTAM * 25) / 100);
 			if (p.stam > p.maxSTAM)
@@ -129,7 +149,7 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		p.stam = p.maxSTAM;
 		if (Defend == false && Rest == false)
 		{
-			printf("");
+			printf("You rest when the enemy hits you, striking for %d damage", (int)enemyAttack);
 			e.stam = e.stam - enemyAttack;
 			p.hp = p.hp - enemyAttack;
 			printf("\n");
@@ -139,7 +159,7 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		}
 		else if (Defend)
 		{
-			printf("");
+			printf("You rest when the enemy defended, anyone receive damage");
 			e.stam = e.stam + ((e.maxSTAM * 25) / 100);
 			if (e.stam > e.maxSTAM)
 				e.stam = e.maxSTAM;
@@ -151,7 +171,7 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		}
 		else if (Rest)
 		{
-			printf("");
+			printf("You rest when the enemy rest, anyone receive damage");
 			e.stam = e.maxSTAM;
 			printf("\n");
 			printf("Enter a character to update the fight...");
@@ -163,8 +183,8 @@ void Combat::CombatChooise(Player& p, Enemy& e) {
 		printf("\n");
 		if (p.potions != 0)
 		{
-			printf("");
-			p.hp = p.hp + ((p.hp * 40) / 100);
+			printf("You drink the potion when the enemy hits you, striking for %d damage", (int)enemyAttack);
+			p.hp = p.hp + ((p.maxHP * 40) / 100) - enemyAttack;
 			if (p.hp > p.maxHP)
 				p.hp = p.maxHP;
 			p.potions--;

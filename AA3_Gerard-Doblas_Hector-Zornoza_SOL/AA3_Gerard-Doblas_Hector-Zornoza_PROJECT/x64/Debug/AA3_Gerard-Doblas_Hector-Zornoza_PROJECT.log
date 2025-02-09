@@ -1,8 +1,20 @@
-﻿  Main.cpp
-  Player.cpp
-C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Main.cpp(108,1): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Main.cpp(109,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Main.cpp(119,6): warning C4101: 'b': variable local sin referencia
-  Generando código...
-  LINK : no se encontró C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+﻿  Combat.cpp
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(13,32): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(46,12): warning C4778: 'printf' : cadena de formato sin terminar '%'
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(60,18): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(61,22): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(72,22): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(81,95): warning C4474: "printf": se pasaron demasiados argumentos para la cadena de formato
+  C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(81,95):
+  los marcadores de posición y sus parámetros esperan 0 argumentos variádicos, pero se proporcionaron 1
+  
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(94,85): warning C4474: "printf": se pasaron demasiados argumentos para la cadena de formato
+  C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(94,85):
+  los marcadores de posición y sus parámetros esperan 0 argumentos variádicos, pero se proporcionaron 1
+  
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(108,20): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(109,16): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(153,20): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(154,16): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\Combat.cpp(187,41): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
   AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.vcxproj -> C:\Users\34657\Documents\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT\AA3_Gerard-Doblas_Hector-Zornoza_SOL\x64\Debug\AA3_Gerard-Doblas_Hector-Zornoza_PROJECT.exe

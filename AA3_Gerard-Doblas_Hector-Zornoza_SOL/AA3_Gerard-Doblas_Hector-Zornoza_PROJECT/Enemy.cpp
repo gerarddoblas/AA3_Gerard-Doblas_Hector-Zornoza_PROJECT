@@ -38,6 +38,7 @@ void Enemy::EnemySpawn(Coord& co, Chest& c,Player& p, int* x, int* y)
 			{
 				arrEnemyX[enemyInMap] = *x;
 				arrEnemyY[enemyInMap] = *y;
+				isLooted[enemyInMap] = false;
 				co.gotoxy(*x, *y);
 				enemyInMap++;
 				printf("%c", enemy);
@@ -48,8 +49,18 @@ void Enemy::EnemySpawn(Coord& co, Chest& c,Player& p, int* x, int* y)
 	{
 		for (int i = 0; i < enemys; i++)
 		{
-			co.gotoxy(arrEnemyX[i], arrEnemyY[i]);
-			printf("%c", enemy);
+			if (p.playerX == arrEnemyX[i] && p.playerY == arrEnemyY[i] && !isLooted[i])
+			{
+				isLooted[i] = true;
+				arrEnemyX[i] = -1;
+				arrEnemyY[i] = -1;
+				sumEnemy += arrEnemyX[i];
+			}
+			else if (arrEnemyX[i] != -1 && arrEnemyY[i] != -1 && !isLooted[i])
+			{
+				co.gotoxy(arrEnemyX[i], arrEnemyY[i]);
+				printf("%c", enemy);
+			}
 		}
 	}
 }

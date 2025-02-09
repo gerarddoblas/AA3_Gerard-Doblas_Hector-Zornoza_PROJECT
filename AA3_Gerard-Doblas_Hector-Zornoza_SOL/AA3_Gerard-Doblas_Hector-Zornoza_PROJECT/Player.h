@@ -6,14 +6,14 @@ struct Player
 {
 	Coord co;
 public:
-	int hp = rand()% (MAX_INIT_HP - MIN_INIT_HP) + MIN_INIT_HP; // Player HP
+	int hp = rand()% (MAX_INIT_HP - MIN_INIT_HP) + MIN_INIT_HP;
 	int maxHP = hp;
-	int stam = rand()% (MAX_INIT_ST - MIN_INIT_ST) + MIN_INIT_ST; // Player stamina
+	int stam = rand()% (MAX_INIT_ST - MIN_INIT_ST) + MIN_INIT_ST; 
 	int maxSTAM = stam;
-	int gold = 0; // Player money
-	int agility = 3; // Player moves
-	int potions = 3; // Player potions, restore 40% HP
-	char player = 'P'; // Player
+	int gold = 0; 
+	int agility = 3; 
+	int potions = 3; 
+	char player = 'P'; 
 	int playerX = 12;
 	int playerY = 12;
 	void PlayerSpawn(int& x, int& y, Coord& co);

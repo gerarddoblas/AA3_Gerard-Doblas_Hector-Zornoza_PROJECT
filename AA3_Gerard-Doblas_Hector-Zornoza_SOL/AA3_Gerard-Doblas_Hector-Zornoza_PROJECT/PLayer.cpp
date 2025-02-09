@@ -50,9 +50,12 @@ void Player::PlayerMove()
 			agility = 3;
 		break;
 	case 'P':
-
-		if (playerY != co.PossibleCoordY[0])
-			playerY -= ROWS_SIZES;
+		if (potions != 0)
+		{
+			potions--;
+			hp = hp + (maxHP * (40 / 100));
+		}
+		
 		break;
 	default:
 		break;

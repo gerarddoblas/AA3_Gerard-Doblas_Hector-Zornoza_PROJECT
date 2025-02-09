@@ -10,18 +10,17 @@ struct Chest
 	Coord co;
 public:
 	int goldChest;
-	int chests = CHESTS;
+	int sumChests = 0;
 	int arrChestX[CHESTS];
 	int arrChestY[CHESTS];
-	void GoldObtain();
 	void ChestRewards(Player& p);
 	void PossiblePotion(Player& p);
 	void ChestsSpawn(Coord& co,Player& p, int* x, int* y);
-	int ChestsInMap = 0;
 private:
+	int ChestsInMap = 0;
+	bool isLooted[CHESTS] = { false };
 	char chest = 'C';
 	bool actualChest = false;
-
 	int possibility;
 	int Gears;
 };

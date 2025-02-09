@@ -11,5 +11,6 @@ private:
 	bool Defend = false;
 	bool Rest = false;
 public:
+	int firstTry = 0;
 	void CombatChooise(Player& p, Enemy& e);
 };

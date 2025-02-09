@@ -13,7 +13,7 @@
 #include <Windows.h>
 enum class MainManager
 {
-	FIGHTING,
+	COMBAT,
 
 	DUNGEON,
 
@@ -76,7 +76,6 @@ void ShowHUDChest(int& x, int& y, MainManager& currentScene, Chest& c, Player& p
 	printf("\n");
 	printf(" > You open the chest and it contains the following:\n");
 	printf("\n");
-	c.GoldObtain();
 	printf("        >%d gold!\n", c.goldChest);
 	printf("        > The Chest contains Gear!\n");
 	c.ChestRewards(p);
@@ -85,21 +84,28 @@ void ShowHUDChest(int& x, int& y, MainManager& currentScene, Chest& c, Player& p
 	printf("____________________________________\n");
 	printf("\n");
 	printf("Enter any character to continue...");
-	
+	printf("\n");
+	getchar();
+	getchar();
 }
 
-void ShowHUDGameover(Player& p)
+void ShowHUDGameover(Player& p, Chest& c, Enemy& e)
 {
-	if (p.hp <= 0)
+	if (p.hp <= 0 && p.hp == 0)
 	{
 		printf("------ GAME OVER ------\n");
 		printf("\n");
-		printf("");
+		printf("	> You LOST! Radev's laughing right now. Your final score is: %d", p.gold);
 		printf("\n");
-		printf("");
+		printf("Thanks for playing :) Enter any character to end the game...");
 	}
-	else if (p.hp == 0)
+	else if (e.sumEnemy == -1 * e.enemys && c.sumChests == -1 * CHESTS)
 	{
+		printf("------ GAME OVER ------\n");
+		printf("\n");
+		printf("	> You WON! Radev's minions are no more. Your final score is: %d", p.gold);
+		printf("\n");
+		printf("Thanks for playing :) Enter any character to end the game...");
 
 	}
 }
@@ -128,13 +134,12 @@ void main()
 
 	int x, y;
 	bool gameIsOver = false;
-	bool MapWrite = false;
 	co.Coords();
 
 	while (!gameIsOver) {
 	switch (currentScene)
 	{
-	case MainManager::FIGHTING:
+	case MainManager::COMBAT:
 		ShowHUDFighting(x, y, currentScene, p);
 		f.CombatChooise(p,e);
 		if (p.hp == 0 && p.hp < 0)
@@ -143,6 +148,7 @@ void main()
 		}
 		else if(e.hp == 0 || e.hp < 0)
 		{
+			f.firstTry = 0;
 			currentScene = MainManager::DUNGEON;
 		}
 		system("cls");
@@ -163,17 +169,24 @@ void main()
 			if (p.playerX == c.arrChestX[i] && p.playerY == c.arrChestY[i])
 				currentScene = MainManager::CHEST;
 		}
+		for (int i = 0; i < e.enemys; i++)
+		{
+			if (p.playerX == e.arrEnemyX[i] && p.playerY == e.arrEnemyY[i])
+				currentScene = MainManager::COMBAT;
+		}
+		if (e.sumEnemy == - 1 * e.enemys && c.sumChests == -1 * CHESTS)
+			currentScene = MainManager::GAMEOVER;
 		system("cls");
 		break;
 	case MainManager::CHEST:
 		ShowHUDChest(x, y, currentScene, c, p);
-		getchar();
-		getchar();
 		currentScene = MainManager::DUNGEON;
 		system("cls");
 		break;
 	case MainManager::GAMEOVER:
-		
+		ShowHUDGameover(p, c, e);
+		getchar();
+		gameIsOver = true;
 			break;
 	default:
 		break;
